@@ -1,21 +1,23 @@
-#include<iostream>
+#include <iostream>
+#include <cstdlib>
 using namespace std;
 int main(){
-    int A[999];
-    int n,i,k=0,S=0;
-    float porc,prom;
-    cout<<"Ingrese la cantidad de numeros: ";
+    int n,s=0,k=0, A[999];
+    double Porc,Prom;
+    cout<<"Cuantos numeros quiere generar: ";
     cin>>n;
-    for(i=0;i<n;i++){
+    for(int i=1;i<=n;i++){
+        cout<<"Ingrese el numero en el arreglo "<<i<<endl;
         cin>>A[i];
         if(A[i]==0){
             k++;
-        }else{
-            S+=A[i];
+        } else{
+            s+=A[i];
         }
     }
-    prom=float(S)/n;
-    porc=(float(k)/n)*100;
-    cout<<"El promedio es: "<<prom<<endl;
-    cout<<"El porcentaje de ceros es: "<<porc<<"% "<<endl;
+    Prom=double(s)/n;
+    Porc=(double(k)/n)*100;
+    cout<<"El promedio es: "<<Prom<<endl;
+    cout<<"El porcentaje de 0 es: "<<Porc<<endl;
+    return 0;
 }
